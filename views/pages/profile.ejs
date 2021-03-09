@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: skyblue;">
+    <div class="container">
+      <a class="btn btn-danger" href="/ " id="logoutBtn">Logout</a>
+      
+      <form class="w-50 mx-auto mt-4" action="/editprofile" method="POST">
+        <h2 class="text-center mb-5">Hi <span class="text-danger"><%= result.username %></span> </h2>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="inputId"
+            name="profileId"
+            value="<%= result.id %>"
+            hidden
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="inputUsername">Username:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputUsername"
+            name="profileUsername"
+            value="<%= result.username %>"
+            readonly
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="inputEmail">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail"
+            name="profileEmail"
+            value="<%= result.email %>"
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="inputPassword">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword"
+            name="profilePassword"
+            value="<%= result.password %>"
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="inputGender">Gender:</label>
+          <input type="text" class="form-control" value="<%= result.gender %>" readonly>
+          <select
+            class="form-select form-select-sm w-25 mt-1"
+            aria-label=".form-select-sm example"
+            name="profileGender"
+          >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="form-group mt-3">
+          <input
+            type="text"
+            class="form-control"
+            id="inputLoggedIn"
+            name="profileLoggedIn"
+            value="<%= result.isLoggedIn %>"
+            hidden
+          />
+        </div>
+        <button type="submit" class="btn btn-success mt-3">Submit</a>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
